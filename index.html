@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compound Interest Calculator</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: #ffffff;
+            color: #333;
+            display: flex;
+        }
+        .sidebar {
+            width: 20%;
+            padding: 20px;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .sidebar table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+            text-transform: lowercase;
+            background: #00008b;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .sidebar td {
+            border: 1px solid white;
+            padding: 10px;
+        }
+        .main-content {
+            width: 80%;
+        }
+        .top-bar {
+            width: 100%;
+            background-color: navy;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .top-bar div a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            width: 60%;
+            margin: 30px auto;
+            text-align: center;
+            background: #add8e6;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+        table {
+            width: 85%;
+            margin: 15px auto;
+            border-collapse: collapse;
+            background: #00008b;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Times New Roman', serif;
+            text-transform: uppercase;
+            text-align: center;
+            border-radius: 10px;
+            color: #fff;
+        }
+        td {
+            padding: 18px;
+            border: 2px solid white;
+        }
+        td label {
+            display: inline-block;
+            width: 250px;
+            text-align: right;
+            margin-right: 15px;
+        }
+        input, select {
+            width: 230px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #333;
+        }
+        button {
+            margin-top: 25px;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            background: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #c70039;
+        }
+        .step-title {
+            text-align: left;
+            margin-left: 8%;
+            font-size: 22px;
+            color: #c70039;
+            font-weight: bold;
+        }
+        .final-amount {
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <table>
+            <tr><td>Compound Interest Calculator</td></tr>
+            <tr><td>Savings Goal Calculator</td></tr>
+            <tr><td>Required Minimum Distribution Calculator</td></tr>
+            <tr><td>College Savings Calculator</td></tr>
+        </table>
+    </div>
+    
+    <div class="main-content">
+        <div class="top-bar">
+            <div><a href="simple_interest.html">Introduction to Investing</a></div>
+            <div>Financial Tool</div>
+            <div>Protect Your Investment</div>
+            <div>Additional Resources</div>
+        </div>
+        
+        <h1 style="color: #000; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"><b>Compound Interest Calculator</b></h1>
+        
+        <div class="container">
+            <div class="step-title">Step 1: Initial Investment</div>
+            <table>
+                <tr>
+                    <td><label>Initial Investment</label></td>
+                    <td><input type="number" id="initialInvestment"></td>
+                </tr>
+            </table>
+            
+            <div class="step-title">Step 2: Contribute</div>
+            <table>
+                <tr>
+                    <td><label>Monthly Contribution</label></td>
+                    <td><input type="number" id="monthlyContribution"></td>
+                </tr>
+            </table>
+            
+            <div class="step-title">Step 3: Time</div>
+            <table>
+                <tr>
+                    <td><label>Time in Years</label></td>
+                    <td><input type="number" id="years"></td>
+                </tr>
+            </table>
+            
+            <div class="step-title">Step 4: Interest Rate</div>
+            <table>
+                <tr>
+                    <td><label>Estimated Rate of Interest (%)</label></td>
+                    <td><input type="number" id="interestRate"></td>
+                </tr>
+            </table>
+            
+            <div class="step-title">Step 5: Compound It</div>
+            <table>
+                <tr>
+                    <td><label>Compounding Frequency</label></td>
+                    <td>
+                        <select id="compoundFrequency">
+                            <option value="1">Annually</option>
+                            <option value="2">Semi-Annually</option>
+                            <option value="4">Quarterly</option>
+                            <option value="12">Monthly</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            
+            <button onclick="calculateCompoundInterest()">CALCULATE</button>
+            
+            <h2 class="final-amount">Final Amount: <span id="result">0</span></h2>
+        </div>
+    </div>
+</body>
+</html>
